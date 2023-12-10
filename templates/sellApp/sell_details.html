@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card card-block p-card">
+                <div class="">
+                    <div class="profile-card rounded">
+                            <h3 class="font-600 text-white text-center mb-0">{{ sale_details.reference_no }}</h3>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card card-block mb-3">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title mb-0">Suppliers Details</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    
+                    <h5>Customer: {{ sale_details.Customer }}</h5>
+                    <h5>Address: {{ sale_details. }}</h5>
+                    <h5>Biller: {{ sale_details.biller }}</h5>
+                    <h5>Tax: {{ sale_details.order_tax }}</h5>
+                    <h5>Discount: {{ sale_details.order_discount }}</h5>
+                    <h5>Shipping: {{ sale_details.shipping }}</h5>
+                    <h5>Document: {{ sale_details.attach_doc }}</h5>
+                    <h5>Sale Status: {{ sale_details.sale_status }}</h5>
+                    <h5>Payment Status: {{ sale_details.payment_status }}</h5>
+                    <h5>Sale Note: {{ sale_details.payment_status }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contentblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid add-form-list">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Update Account</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <form action="" method='POST'>
+                        {% csrf_token %}
+                        <div class="row"> 
+                            
+                            <div class="col-md-12">                      
+                                <div class="form-group">
+                                    {{ acc_info.name|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">                      
+                                <div class="form-group">
+                                    {{ acc_info.phone_number|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">                      
+                                <div class="form-group">
+                                    {{ acc_info.email|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">                      
+                                <div class="form-group">
+                                    {{ acc_info.gender|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">                      
+                                <div class="form-group">
+                                    {{ update_form.username|as_crispy_field }}
+                                </div>
+                            </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Update Account</button>
+                        <a class="btn btn-danger" href="{% url 'AccountApp:account-list' %}">Cancel</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page end  -->
+</div>
+
+{% endblock contentblock %}
+

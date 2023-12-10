@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card card-block p-card">
+                <div class="">
+                    <div class="profile-card rounded">
+                            <h3 class="font-600 text-white text-center mb-0">{{ purchase_details.reference_no }}</h3>
+                            <h5 class="text-white text-center">Purchase Date: {{ purchase_details.purchase_date }}</h5>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card card-block mb-3">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title mb-0">Purchase Details</h4>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 >Supplier: {{ purchase_details.supplier }}</h5>
+                    <h5>Discount: {{ purchase_details.discount }}</h5>
+                    <h5>Order Note: {{ purchase_details.order_note }}</h5>
+                    <h5>Shipping: {{ purchase_details.shipping }}</h5>
+                    <h5>Purchase Type: {{ purchase_details.purchase_type }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contentblock %}

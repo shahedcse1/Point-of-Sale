@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Delete {{ product.name }}</h4>
+            </div>
+            <div class="card-body">
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Are you sure to delete {{product.name}}?</p>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="{% url 'ProductApp:product-list' %}" class="btn btn-primary">Back</a>
+                        <button type='submit' class="btn btn-danger">Delete</button>
+                    </div>
+                    
+                </form>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock contentblock %}

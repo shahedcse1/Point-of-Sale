@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid add-form-list">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between bg-primary">
+                    <div class="header-title">
+                        <h4 class="card-title">Add Product</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="" method='POST' enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.product_type|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.name|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.code|as_crispy_field }}
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Barcode Symbology *</label>
+                                    <select name="type" class="selectpicker form-control" data-style="py-0">
+                                        <option>CREM01</option>
+                                        <option>UM01</option>
+                                        <option>SEM01</option>
+                                        <option>COF01</option>
+                                        <option>FUN01</option>
+                                        <option>DIS01</option>
+                                        <option>NIS01</option>
+                                    </select>
+                                </div>
+                            </div> -->
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.product_category|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.cost|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.quantity|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.price|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.tax_mathod|as_crispy_field }}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.product_image|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.description|as_crispy_field }}                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Add Product</button>
+                        <a href="{% url 'posadminApp:home' %}" class="btn btn-danger">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page end  -->
+</div>
+
+{% endblock contentblock %}

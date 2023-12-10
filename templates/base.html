@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>POS Dashboard</title>
+
+    <!-- Favicon -->
+    {% include "include/style.html" %}
+</head>
+
+<body class="">
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center"></div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        
+        {% include "include/sidebar.html" %}
+        {% include "include/navbar.html" %}
+
+        <div class="content-page">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            {% endfor %} 
+            {% endif %} 
+            {% block contentblock %}
+            {% endblock contentblock %}
+        </div>
+        
+    </div>
+    <!-- Wrapper End-->
+    {% include "include/footer.html" %} 
+    {% include "include/script.html" %}
+</body>
+
+</html>

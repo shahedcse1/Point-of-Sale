@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card card-block p-card">
+                <div class="">
+                    <div class="profile-card rounded">
+                            <h3 class="font-600 text-white text-center mb-0">{{ customer_details.name }}</h3>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card card-block mb-3">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title mb-0">Customer Details</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    
+                    <h5>Customer: {{ customer_details.name }}</h5>
+                    <h5>Email: {{ customer_details.email }}</h5>
+                    <h5>Phone Number: {{ customer_details.phone_number }}</h5>
+                    <h5>Country: {{ customer_details.country }}</h5>
+                    <h5>Address: {{ customer_details.address }}</h5>
+                    <h5>City: {{ customer_details.city }}</h5>
+                    <h5>State: {{ customer_details.state }}</h5>
+                    <h5>Coustomer Group: {{ customer_details.coustomer_group }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contentblock %}

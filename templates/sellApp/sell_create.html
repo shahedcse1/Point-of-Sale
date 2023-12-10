@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+{% load crispy_forms_tags %}
+
+
+<div class="container-fluid add-form-list">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Add Sale</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action='', method='POST'>
+                        {% csrf_token %}
+                        <div class="row">                                  
+                            <div class="col-md-6">                      
+                                <div class="form-group">
+                                    {{ form.sell_date|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.reference_no|as_crispy_field }}
+                                </div>
+                            </div> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.biller|as_crispy_field }}
+                                </div> 
+                            </div>  
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.Customer|as_crispy_field }}
+                                </div>
+                            </div>   
+                            <div class="col-md-6"> 
+                                <div class="form-group">
+                                    {{ form.order_tax|as_crispy_field }}
+                                </div>
+                            </div> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.order_discount|as_crispy_field }}
+                                </div>
+                            </div> 
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.shipping|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.attach_doc|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-md-6"> 
+                                <div class="form-group">
+                                    {{ form.sale_status|as_crispy_field }}
+                                </div>
+                            </div> 
+                            <div class="col-md-6"> 
+                                <div class="form-group">
+                                    {{ form.payment_status|as_crispy_field }}
+                                </div>
+                            </div> 
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.sale_note|as_crispy_field }}
+                                </div>
+                            </div> 
+                        </div>                            
+                        <button type="submit" class="btn btn-primary mr-2">Add Sale</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page end  -->
+
+</div>
+
+
+{% endblock contentblock %}
+

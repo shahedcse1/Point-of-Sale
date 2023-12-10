@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contentblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card card-block p-card">
+                <div class="">
+                    <div class="profile-card rounded">
+                        <img src="{{ category_details.image_url }}" alt="profile-bg"
+                            class="avatar-100 rounded d-block mx-auto img-fluid mb-3">
+                            <h3 class="font-600 text-white text-center mb-0">{{ category_details.cate_name }}</h3>
+                            <h5 class="text-white text-center">Code: {{ category_details.code }}</h5>
+                            <h5 class="text-white text-center">Parent Category: {{ category_details.parent }}</h5>
+                            <h5 class="text-white text-center">Active Status: {{ category_details.is_active }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card card-block mb-3">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title mb-0">Category Details</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>L{{ category_details.cate_des }}
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contentblock %}
